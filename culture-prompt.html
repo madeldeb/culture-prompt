@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Culture Prompt</title>
+<style>
+  body { margin:0; font-family: Helvetica, Arial, sans-serif; background:#fff; }
+  .wrap {
+    padding:20px; background:#F9DD4A; border-radius:16px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1); max-width:520px;
+    margin:24px auto; text-align:center;
+  }
+  h3 { color:#000099; margin:0 0 12px; }
+  #culturePrompt { font-size:1.1em; color:#000099; font-style:italic; line-height:1.5; }
+  button {
+    margin-top:15px; padding:12px 24px; font-size:.95em;
+    background:#00D7B9; color:#000099; font-weight:bold;
+    border:none; border-radius:8px; cursor:pointer; transition:transform .1s ease;
+  }
+  button:active { transform:scale(0.98); }
+</style>
+<div class="wrap">
+  <h3>💡 Culture Prompt</h3>
+  <p id="culturePrompt">Loading your prompt...</p>
+  <button onclick="newPrompt()">🔄 Get Another Prompt</button>
+</div>
+<script>
+  const prompts = [
+    "What’s one small act you saw today that reflected our culture?",
+    "How did you help make work easier for someone this week?",
+    "Which company value feels most alive to you right now?",
+    "What’s one thing you learned from a colleague recently?",
+    "How have you inspired curiosity in your work this week?",
+    "What’s one way we can make our culture even stronger?",
+    "Who deserves recognition for living our values today?",
+    "What’s a challenge you turned into a learning opportunity?"
+  ];
+  function newPrompt(){
+    const i = Math.floor(Math.random() * prompts.length);
+    document.getElementById("culturePrompt").innerText = prompts[i];
+  }
+  newPrompt();
+</script>
+</html>
